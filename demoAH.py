@@ -3,8 +3,8 @@ import boto3
 # Khởi tạo client DynamoDB
 dynamodb = boto3.resource(
     'dynamodb',
-    aws_access_key_id="AKIAZOZQFSDKQL6REN5A",
-    aws_secret_access_key="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",
+    aws_access_key_id="aws_access_key_id",
+    aws_secret_access_key="aws_secret_access_key",
     region_name="us-west-2"
 )
 
