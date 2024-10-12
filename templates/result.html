@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả chẩn đoán</title>
+</head>
+<body>
+    <h1>Kết quả chẩn đoán</h1>
+    <p>Triệu chứng đã nhập: {{ symptoms }}</p>
+    <h2>Các bước thực hiện:</h2>
+    <ul>
+        {% for step in steps %}
+        <li>
+            <strong>Mệnh đề 1:</strong> {{ step.clause1 }}<br>
+            <strong>Mệnh đề 2:</strong> {{ step.clause2 }}<br>
+            <strong>Mệnh đề suy diễn:</strong> {{ step.resolvent }}<br>
+            <strong>Mâu thuẫn:</strong> {{ 'Có' if step.is_empty else 'Không' }}
+        </li>
+        {% endfor %}
+    </ul>
+    <h2>Kết quả:</h2>
+    <p>{{ 'Có mâu thuẫn trong tập hợp mệnh đề!' if result else 'Không có mâu thuẫn trong tập hợp mệnh đề.' }}</p>
+    <a href="/">Quay lại</a>
+</body>
+</html>
